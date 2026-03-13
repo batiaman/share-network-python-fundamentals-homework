@@ -27,21 +27,40 @@ get started with the LeetCode style of thinking.
 
 def roman_to_int(s):
     # 1. Create variables to store the Roman symbols and their integer values.
-    
+    roman_symbols = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
     
     # 2. Create a variable to keep track of the total sum.
-    
+    total = 0
+    prev_value = 0
     
     # 3. Loop through the string 's'. 
     # Hint: You may need to look at the current character and the next character
     # to determine if subtraction should occur.
-    
+   
+    for char in reversed(s):
+        value = roman_symbols[char]
+        if value >= prev_value:
+            total += value  # Add the value if it's not a subtractive combination
+        else:
+            total -= value  # Subtract the value if it's a subtractive combination
+        prev_value = value
     
     # 4. Return the final total sum.
-    pass
-
+    return total
 # --- Test Cases ---
 # Test your function with these values:
 # print(roman_to_int("III"))     # Expected Output: 3
 # print(roman_to_int("LVIII"))   # Expected Output: 58
 # print(roman_to_int("MCMXCIV")) # Expected Output: 1994
+
+print(roman_to_int("III"))
+print(roman_to_int("LVIII")) 
+print(roman_to_int("MCMXCIV"))

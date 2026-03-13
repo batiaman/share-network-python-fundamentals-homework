@@ -1,0 +1,32 @@
+import datetime
+
+current_id=0
+
+SEVERITY_LEVELS = ["Low", "Medium", "High", "Critical"]    
+Affected_systems =set ("reported_systems")
+database = [
+    {"id": 101, "title": "System Crash", "priority": "Critical", "code": 404},
+    {"id": 102, "title": "Typo on Homepage", "priority": "Low"},
+    {"id": 103, "title": "Data Loss on Save", "priority": "Critical", "code": 404},
+    {"id": 104, "title": "Button Color Wrong", "priority": "Medium"}
+]
+def create_ticket(title:str, priority:str="Low", owner: str="unassigned", **details):
+    global current_id # Accessing global scope
+    new_bug = {
+        "id": current_id,
+        "title": title,
+        "priority": priority,
+        "owner": owner,
+        "datetime": datetime.datetime.now()
+    }
+
+
+current_id += 1
+def close_bug(ticket_id: int):
+        for index, bug in enumerate(bug_database):
+            if bug["id"]== ticket_id:
+                removed_bug = bug_database.pop(index)
+                print(f"---Ticket {ticket_id}('{removed_bug['title']}')has been closed---")
+                return
+            print(f"Error: ticket {ticket_id} not found.")
+            print("system Affected: {affected_system}")

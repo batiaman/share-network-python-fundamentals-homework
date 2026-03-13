@@ -9,14 +9,14 @@ import random
 
 fortune = random.randint(0, 4)
 
-if fortune == 0
+if fortune == 0:
   print("May you one day be carbon neutral")
 elif fortune == 1:  
   print("You have rice in your teeth")
-eli fortune == 2:
+elif fortune == 2:
   print("No snowflake feels responsible for an avalanche")
 elif fortune == 3:
-  print("You can only connect the dots looking backwards"
+  print("You can only connect the dots looking backwards")
 elif fortune == 4:
   print("The fortune you seek is in another cookie")
 
@@ -31,13 +31,13 @@ print("For ordering his favorite beverages on demand, LBJ had four buttons insta
 
 print("A.", option1)
 print("B.", option2)
-print("C.", option3)
+#print("C.", option3) :option3 is not defined, so i commented it out
 print("D.", option4)
   
 answer = 'a'
 
 if answer == 'A' or answer == 'a': 
-  scor += 100
+  score+= 100
   print("\nCorrect!")
 else:
   print("\nNope, sorry!")
@@ -56,7 +56,7 @@ length = 2
 width = 12
 area = length * width
 
-print("The rectangle area is" + area )
+print("The rectangle area is", area)
     
 radius = 36
 area = math.pi * radius * radius
@@ -64,9 +64,9 @@ area = math.pi * radius * radius
 print("The circle area is", area)
 
 # Exercise 4: Print the type of errors you encountered in this exercise.
-error_type_1 = 
-error_type_2 = 
-error_type_3 = 
+error_type_1 = float
+error_type_2 = str
+error_type_3 = float
 print(error_type_1)
 print(error_type_2)
 print(error_type_3)
